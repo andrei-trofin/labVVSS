@@ -31,7 +31,7 @@ public class InvoiceControllerTest {
     public void addInvoice_validInvoice_returnOKString() {
         // Given
         prepareClientRepoWithClient();
-        when(invoiceRepo.isInvoiceInDatabase(any())).thenReturn(false);
+        //when(invoiceRepo.isInvoiceInDatabase(any())).thenReturn(false);
         when(invoiceRepo.addInvoice(any())).thenReturn(true);
 
         // When
@@ -45,7 +45,7 @@ public class InvoiceControllerTest {
     public void addInvoice_invoiceWithSameIdAlreadyInRepo_returnErrorString() {
         // Given
         prepareClientRepoWithClient();
-        when(invoiceRepo.isInvoiceInDatabase(any())).thenReturn(true);
+        //when(invoiceRepo.isInvoiceInDatabase(any())).thenReturn(true);
 
         // When
         String result = sut.addInvoice(19, 1922, 7, 6.55f);
