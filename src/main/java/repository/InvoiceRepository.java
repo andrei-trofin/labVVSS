@@ -22,6 +22,10 @@ public class InvoiceRepository {
         return invoices;
     }
 
+    public void setInvoices(ArrayList<Invoice> invoices) {
+        this.invoices = invoices;
+    }
+
     private void loadInvoices() {
         File clientFile = new File(fileInvoice);
         Scanner sc;
@@ -65,7 +69,7 @@ public class InvoiceRepository {
         }
     }
 
-    private boolean isInvoiceInDatabase(final Invoice invoice) {
+    public boolean isInvoiceInDatabase(final Invoice invoice) {
         for (Invoice i: invoices) {
             if (i.equals(invoice)) {
                 return true;

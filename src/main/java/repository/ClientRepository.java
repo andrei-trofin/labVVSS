@@ -22,6 +22,10 @@ public class ClientRepository {
         return clients;
     }
 
+    public void setClients(List<Client> clients) {
+        this.clients = clients;
+    }
+
     private void loadClients() {
         File clientFile = new File(fileClient);
         try {

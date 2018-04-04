@@ -46,15 +46,10 @@ public class InvoiceController {
     }
 
     private String validateInvoice(final Integer clientId, final Integer year, final Integer month, final Float toPay){
-        if (!(clientId instanceof Integer) || !(year instanceof Integer) || !(month instanceof Integer)
-                || !(toPay instanceof Float)) {
-            return "Invalid types inserted";
+        if (clientId < 0 || month < 0 || month > 12 || year < 0 || toPay < 0) {
+            return "Data inserted is invalid";
         } else {
-            if (clientId < 0 || month < 0 || month > 12 || year < 0 || toPay < 0) {
-                return "Data inserted is invalid";
-            } else {
-                return "OK";
-            }
+            return "OK";
         }
     }
 }
