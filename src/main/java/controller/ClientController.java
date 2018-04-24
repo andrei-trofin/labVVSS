@@ -34,10 +34,15 @@ public class ClientController {
         if (!(id instanceof Integer) || id < 0) {
             return "Invalid client id";
         }
-        if(!name.equals("") && !address.equals("") && !name.equals(" ")){
-            for(int i=0;i<name.length();i++){
-                if(!Character.isAlphabetic(name.charAt(i)) && !Character.isSpaceChar(name.charAt(i))){
+        if (!name.equals("") && !address.equals("") && !name.equals(" ")) {
+            for (int i=0;i<name.length();i++) {
+                if (!Character.isAlphabetic(name.charAt(i)) && !Character.isSpaceChar(name.charAt(i))) {
                     return "Invalid character: " + name.charAt(i);
+                }
+            }
+            for (int i=0;i<address.length();i++) {
+                if (!Character.isLetterOrDigit(address.charAt(i)) && !Character.isSpaceChar(address.charAt(i))) {
+                    return "Invalid character: " + address.charAt(i);
                 }
             }
             return "OK";
