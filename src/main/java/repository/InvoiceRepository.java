@@ -18,7 +18,7 @@ public class InvoiceRepository {
         loadInvoices();
     }
 
-    public ArrayList<Invoice> getInvoices() {
+    public List<Invoice> getInvoices() {
         return invoices;
     }
 

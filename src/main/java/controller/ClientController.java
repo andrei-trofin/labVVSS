@@ -26,6 +26,10 @@ public class ClientController {
         }
     }
 
+    public void setClientRepo(ClientRepository clientRepo) {
+        this.clientRepo = clientRepo;
+    }
+
     public int getClientsSize() {
         return this.clientRepo.getClients().size();
     }

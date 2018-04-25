@@ -16,6 +16,14 @@ public class InvoiceController {
         this.clientRepo = clientRepo;
     }
 
+    public void setInvoiceRepo(InvoiceRepository invoiceRepo) {
+        this.invoiceRepo = invoiceRepo;
+    }
+
+    public void setClientRepo(ClientRepository clientRepo) {
+        this.clientRepo = clientRepo;
+    }
+
     public String addInvoice(final int clientId, final int year, final int month, final float toPay){
         String valid;
         if (!(valid = validateInvoice(clientId, year, month, toPay)).equals("OK")) {
