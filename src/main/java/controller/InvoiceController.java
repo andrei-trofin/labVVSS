@@ -24,6 +24,10 @@ public class InvoiceController {
         this.clientRepo = clientRepo;
     }
 
+    public List<Invoice> getInvoices() {
+        return invoiceRepo.getInvoices();
+    }
+
     public String addInvoice(final int clientId, final int year, final int month, final float toPay){
         String valid;
         if (!(valid = validateInvoice(clientId, year, month, toPay)).equals("OK")) {

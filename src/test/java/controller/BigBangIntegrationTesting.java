@@ -78,7 +78,6 @@ public class BigBangIntegrationTesting {
         when(invoiceRepo.getInvoices()).thenReturn(Collections
                 .singletonList(invoiceFromClient));
         when(invoiceRepo.addInvoice(any())).thenReturn(true);
-
     }
 
     private void prepareRepoForNoClientDetection() {
